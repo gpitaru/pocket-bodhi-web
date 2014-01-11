@@ -12,9 +12,44 @@
     </script>
     <script type="text/javascript">
       function initialize() {
+        var styles = [
+          {
+            "featureType": "road",
+            "stylers": [
+              { "color": "#ffffff" }
+            ]
+          },{
+            "featureType": "landscape",
+            "stylers": [
+              { "color": "#ecedec" }
+            ]
+          },{
+            "elementType": "labels",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          },{
+            "featureType": "poi",
+            "stylers": [
+              { "color": "#e0e0e0" }
+            ]
+          },{
+            "featureType": "water",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          },{
+            "featureType": "transit",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          },{
+          }
+        ];
         var mapOptions = {
           center: new google.maps.LatLng(39.5, -98.35),
-          zoom: 5
+          zoom: 5,
+          styles: styles
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
