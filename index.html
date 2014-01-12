@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASvWxvu96p44i3bEmdGuOpQtx98Lj-7Vo&sensor=false&libraries=visualization">
@@ -17,12 +17,12 @@
           {
             "featureType": "road",
             "stylers": [
-              { "color": "#ffffff" }
+              { "color": "#202020" }
             ]
           },{
             "featureType": "landscape",
             "stylers": [
-              { "color": "#ecedec" }
+              { "color": "#181818" }
             ]
           },{
             "elementType": "labels",
@@ -32,12 +32,17 @@
           },{
             "featureType": "poi",
             "stylers": [
-              { "color": "#e0e0e0" }
+              { "color": "#101010" }
             ]
           },{
             "featureType": "water",
             "stylers": [
-              { "visibility": "off" }
+              { "color": "#1f1f1f" }
+            ]
+          },{
+            "featureType": "administrative",
+            "stylers": [
+              { "color": "#222222" }
             ]
           },{
             "featureType": "transit",
@@ -45,7 +50,13 @@
               { "visibility": "off" }
             ]
           },{
-          }
+            "featureType": "poi",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          },{
+            "featureType": "administrative",
+            "elementType": "geometry.stroke"  }
         ];
 
         var mapOptions = {
@@ -95,7 +106,13 @@
     </script>
   </head>
   <body>
-    <span id="med_counter"></span> people currently meditating. Ready to join the community? App Store linkies
+    <header class="clearfix">
+      <a href="/"><img class="logo" src="img/logo.png" /></a>
+      <a href="#"><img class="appstore" src="img/appstore.png" /></a>
+    </header>
+    <div class="map-stats">
+      <p><span id="med_counter"></span> people currently meditating. Ready to join the community?</p>
+    </div>
     <div id="map-canvas"/>
   </body>
 </html>
